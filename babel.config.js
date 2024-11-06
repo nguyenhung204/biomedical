@@ -1,3 +1,15 @@
-module.exports = {
-  presets: ['module:@react-native/babel-preset'],
+/* eslint-disable semi */
+/* eslint-disable quotes */
+module.exports = function (api) {
+  api.cache(true);
+  return {
+    presets: [
+      ["babel-preset-expo", { jsxImportSource: "nativewind" }],
+      "nativewind/babel",
+    ],
+    plugins: [
+      "react-native-reanimated/plugin",
+      "@babel/plugin-proposal-export-namespace-from",
+    ],
+  };
 };
